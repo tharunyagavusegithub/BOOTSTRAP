@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header style=" padding: 20px 60px;" class=" text-bg-dark">
+        <div class="">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+
+                    <img class="bi me-2" width="40" height="32" role="img"
+                        src="data:image/jpeg;base64,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"
+                        alt="">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button type="button" class="btn btn-warning">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div style="background-color: white; padding: 60px;" class=" col-xxl-8">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="https://getbootstrap.com/docs/5.3/examples/heroes/bootstrap-themes.png"
+                    class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
+                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
+                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: whitesmoke; padding: 60px;" class="" id="featured-3">
+        <h2 class="pb-2 border-bottom">Service</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 p-2 rounded-4">
+
+                    <svg class="bi" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
+                    and probably just keep going until we run out of words.</p>
+                <a href="#" class="icon-link">
+                    Call to action
+                    <svg class="bi">
+                        <use xlink:href="#chevron-right"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div
+                    class="p-2 rounded-4 feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+
+                    <svg class="bi" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+                        <path
+                            d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5z" />
+                    </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
+                    and probably just keep going until we run out of words.</p>
+                <a href="#" class="icon-link">
+                    Call to action
+                    <svg class="bi">
+                        <use xlink:href="#chevron-right"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div
+                    class="p-2 rounded-4 feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <svg class="bi" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-toggles2" viewBox="0 0 16 16">
+                        <path d="M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2s-.195-1.412-.535-2" />
+                        <path
+                            d="M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6m0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8m.535-10a4 4 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126q.138-.534.41-1H4a2 2 0 1 0 0 4z" />
+                        <path d="M14 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0" />
+                    </svg>
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence
+                    and probably just keep going until we run out of words.</p>
+                <a href="#" class="icon-link">
+                    Call to action
+                    <svg class="bi">
+                        <use xlink:href="#chevron-right"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: white; padding: 60px;" class="" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Projects</h2>
+
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-3.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <small>Earth</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3"></use>
+                                </svg>
+                                <small>3d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-1.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <small>Pakistan</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3"></use>
+                                </svg>
+                                <small>4d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                    style="background-image: url('https://getbootstrap.com/docs/5.3/examples/features/unsplash-photo-2.jpg');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <small>California</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3"></use>
+                                </svg>
+                                <small>5d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: whitesmoke; padding: 60px;" class="">
+        <div class="row">
+            <div class="col-lg-4 align-items-center justify-content-center d-flex flex-column">
+
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    src="https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <h2 class="fw-normal">John</h2>
+                <p class="text-center">Some representative placeholder content for the three columns of text below the
+                    carousel.</p>
+                <p><a class="btn btn-secondary" href="#">View details »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 align-items-center justify-content-center d-flex flex-column">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <h2 class="fw-normal">Prince</h2>
+                <p class="text-center">Another exciting bit of representative placeholder content. This time, we've
+                    moved on to the second</p>
+                <p><a class="btn btn-secondary" href="#">View details »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 align-items-center justify-content-center d-flex flex-column">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <h2 class="fw-normal">Liam</h2>
+                <p class="text-center">And lastly this, the third column of representative placeholder content.</p>
+                <p><a class="btn btn-secondary" href="#">View details »</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div>
+    </div>
+
+    <div style="background-color: white; padding: 60px;" class="">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
+            <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers
+                with this Bootstrap example. It’s built with default Bootstrap components and utilities with little
+                customization.</p>
+        </div>
+
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Free</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$0<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>10 users included</li>
+                                <li>2 GB of storage</li>
+                                <li>Email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Pro</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$15<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>20 users included</li>
+                                <li>10 GB of storage</li>
+                                <li>Priority email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Enterprise</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$29<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>30 users included</li>
+                                <li>15 GB of storage</li>
+                                <li>Phone and email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <div style="background-color: white; padding: 60px;">
+        <footer class="">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-1">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Subscribe to our newsletter</h5>
+                        <p>Monthly digest of what's new and exciting from us.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2024 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#twitter"></use>
+                            </svg></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#instagram"></use>
+                            </svg></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#facebook"></use>
+                            </svg></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
